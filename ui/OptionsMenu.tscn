@@ -16,7 +16,6 @@ theme_override_constants/margin_bottom = 50
 script = ExtResource("1_und70")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 347.0
 offset_right = 576.0
@@ -26,14 +25,12 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 576.0
 offset_bottom = 670.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 526.0
 offset_bottom = 91.0
 theme_override_font_sizes/font_size = 64
@@ -42,20 +39,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Resolution" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 95.0
 offset_right = 526.0
 offset_bottom = 132.0
 
 [node name="ResLabel" type="Label" parent="VBoxContainer/Resolution"]
-layout_mode = 2
 offset_right = 203.0
 offset_bottom = 37.0
 theme_override_font_sizes/font_size = 24
 text = "Resolution Scale: "
 
 [node name="ResSlider" type="HSlider" parent="VBoxContainer/Resolution"]
-layout_mode = 2
 offset_left = 207.0
 offset_top = 10.0
 offset_right = 521.0
@@ -64,14 +58,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="ResScaleLabel" type="Label" parent="VBoxContainer/Resolution"]
-layout_mode = 2
 offset_left = 525.0
 offset_top = 7.0
 offset_right = 526.0
 offset_bottom = 30.0
 
 [node name="Supersampling" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 156.0
 offset_top = 136.0
 offset_right = 370.0
@@ -79,21 +71,18 @@ offset_bottom = 173.0
 size_flags_horizontal = 4
 
 [node name="SSLabel" type="Label" parent="VBoxContainer/Supersampling"]
-layout_mode = 2
 offset_right = 186.0
 offset_bottom = 37.0
 theme_override_font_sizes/font_size = 24
 text = "Supersampling: "
 
 [node name="SSCheckBox" type="CheckBox" parent="VBoxContainer/Supersampling"]
-layout_mode = 2
 offset_left = 190.0
 offset_right = 214.0
 offset_bottom = 37.0
 disabled = true
 
 [node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 90.0
 offset_top = 177.0
 offset_right = 435.0
@@ -102,7 +91,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="FSLabel" type="Label" parent="VBoxContainer/Fullscreen"]
-layout_mode = 2
 offset_right = 132.0
 offset_bottom = 37.0
 theme_override_font_sizes/font_size = 24
@@ -111,7 +99,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/Fullscreen"]
-layout_mode = 2
 offset_left = 136.0
 offset_right = 345.0
 offset_bottom = 37.0
@@ -124,20 +111,17 @@ popup/item_2/text = "Exclusive Fullscreen"
 popup/item_2/id = 2
 
 [node name="MouseSensitivity" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 218.0
 offset_right = 526.0
 offset_bottom = 255.0
 
 [node name="Label" type="Label" parent="VBoxContainer/MouseSensitivity"]
-layout_mode = 2
 offset_right = 195.0
 offset_bottom = 37.0
 theme_override_font_sizes/font_size = 24
 text = "Look Sensitivity: "
 
 [node name="SensSlider" type="HSlider" parent="VBoxContainer/MouseSensitivity"]
-layout_mode = 2
 offset_left = 199.0
 offset_right = 521.0
 offset_bottom = 37.0
@@ -146,14 +130,12 @@ size_flags_vertical = 1
 rounded = true
 
 [node name="Label2" type="Label" parent="VBoxContainer/MouseSensitivity"]
-layout_mode = 2
 offset_left = 525.0
 offset_top = 7.0
 offset_right = 526.0
 offset_bottom = 30.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 259.0
 offset_right = 526.0
 offset_bottom = 359.0
@@ -161,7 +143,6 @@ theme_override_constants/separation = 100
 theme_override_styles/separator = SubResource("StyleBoxEmpty_32lav")
 
 [node name="BackToMenuInGame" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 363.0
 offset_right = 526.0
 offset_bottom = 394.0

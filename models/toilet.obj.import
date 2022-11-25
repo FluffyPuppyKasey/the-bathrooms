@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ciibv5kcwh4jp"
+path="res://.godot/imported/toilet.obj-d61bf26bc08dd2539a932671f51eb62c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toilet.obj-d61bf26bc08dd2539a932671f51eb62c.mesh"]
+
+source_file="res://models/toilet.obj"
+dest_files=["res://.godot/imported/toilet.obj-d61bf26bc08dd2539a932671f51eb62c.mesh", "res://.godot/imported/toilet.obj-d61bf26bc08dd2539a932671f51eb62c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

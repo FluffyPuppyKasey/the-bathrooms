@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://182jccm0ywgs"]
-
-[resource]
-metallic_specular = 1.0
-clearcoat_enabled = true
-clearcoat_roughness = 0.0
-subsurf_scatter_strength = 0.95
-refraction_scale = 1.0

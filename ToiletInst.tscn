@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c64fjo0u11jm3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bo84qss1wl4ph" path="res://toilet.obj" id="1_lfeh4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dvewv"]
+points = PackedVector3Array(-0.239622, 0.420674, -0.339364, 0.0452469, 0.463246, 0.472733, 0.0880065, 0.463246, 0.458424, -0.068681, 0.905024, -0.168409, 0.233342, 0.462604, -0.36266, 0.10226, -0.00673461, 0.301611, -0.196862, 0.463246, 0.344455, -0.0971874, -0.00673461, -0.154101, 0.235754, 0.874821, -0.366795, -0.23232, 0.876938, -0.368844, 0.230441, 0.463246, 0.230401, -0.0971874, -0.00673461, 0.316004, 0.0737533, -0.00673461, -0.182635, 0.18773, 0.890655, -0.19686, -0.225369, 0.463246, 0.258935, -0.239622, 0.890655, -0.26807, -0.111441, 0.463246, 0.444199, 0.244694, 0.434954, -0.282379, 0.18773, 0.463246, 0.35868, 0.244694, 0.890655, -0.282379, -0.228119, 0.449145, -0.361205, -0.111441, -0.00673461, 0.273161, 0.10226, -0.00673461, -0.139875, -0.0401747, -0.00673461, -0.19686, 0.02936, 0.0141948, 0.357945, 0.0737533, 0.905024, -0.154101, -0.253875, 0.776685, -0.253845, -0.0401747, 0.463246, 0.472733, -0.068681, 0.905024, -0.154101, -0.196862, 0.890655, -0.211085, 0.130717, 0.463246, 0.429974, 0.216787, 0.395512, 0.233047)
+
+[node name="ToiletInst" type="Node3D"]
+
+[node name="ToiletBodyPhys" type="RigidBody3D" parent="."]
+transform = Transform3D(0.393942, 0, 0.919135, 0, 1, 0, -0.919135, 0, 0.393942, 0, 10, 0)
+mass = 0.13
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.25, 0)
+gravity_scale = 0.25
+
+[node name="ToiletMesh" type="MeshInstance3D" parent="ToiletBodyPhys"]
+mesh = ExtResource("1_lfeh4")
+skeleton = NodePath("../..")
+
+[node name="ToiletMeshPhys2" type="CollisionShape3D" parent="ToiletBodyPhys"]
+shape = SubResource("ConvexPolygonShape3D_dvewv")

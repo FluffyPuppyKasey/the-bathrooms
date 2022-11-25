@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://cctika4gb5jks"]
+
+[ext_resource type="Material" uid="uid://dj3egmsqwwgyo" path="res://floor.tres" id="1_ocvg0"]
+[ext_resource type="Script" path="res://dupe.gd" id="1_on2lj"]
+[ext_resource type="ArrayMesh" uid="uid://bo84qss1wl4ph" path="res://toilet.obj" id="2_4lgtb"]
+[ext_resource type="Material" uid="uid://182jccm0ywgs" path="res://mainToilet.tres" id="3_al00u"]
+[ext_resource type="Material" uid="uid://5ikba1kiigmo" path="res://metal.tres" id="4_161nq"]
+[ext_resource type="PackedScene" uid="uid://c64fjo0u11jm3" path="res://ToiletInst.tscn" id="4_qh5xr"]
+[ext_resource type="Shader" path="res://PS1-PP.gdshader" id="5_0vxxx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_44aht"]
+sky_top_color = Color(0.52549, 0.435294, 0.258824, 1)
+sun_angle_max = 5.0
+
+[sub_resource type="Sky" id="Sky_v72l3"]
+sky_material = SubResource("ProceduralSkyMaterial_44aht")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_d5shx"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_v72l3")
+ambient_light_source = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.25
+volumetric_fog_albedo = Color(0.682353, 0.596078, 0.447059, 1)
+volumetric_fog_length = 8.0
+volumetric_fog_ambient_inject = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n5ksf"]
+lightmap_size_hint = Vector2i(152, 152)
+material = ExtResource("1_ocvg0")
+size = Vector2(30, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcumv"]
+size = Vector3(30, 0, 30)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypxgx"]
+render_priority = 0
+shader = ExtResource("5_0vxxx")
+shader_parameter/color_depth = 5
+shader_parameter/dithering = true
+shader_parameter/resolution_scale = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_unoul"]
+material = SubResource("ShaderMaterial_ypxgx")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="MenuBG" type="Node3D"]
+script = ExtResource("1_on2lj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 1, 5)
+fov = 40.0
+
+[node name="Toilet" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.698387, 0, -0.273414, 0, 0.75, 0, 0.273414, 0, 0.698387, 0.333, 0, 3.334)
+mesh = ExtResource("2_4lgtb")
+surface_material_override/0 = ExtResource("3_al00u")
+surface_material_override/1 = ExtResource("3_al00u")
+surface_material_override/2 = ExtResource("4_161nq")
+surface_material_override/3 = ExtResource("3_al00u")
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.333, 1.454, 3.334)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 5.0
+spot_angle = 20.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d5shx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_n5ksf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_fcumv")
+
+[node name="ToiletInst" parent="." instance=ExtResource("4_qh5xr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 10, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_unoul")

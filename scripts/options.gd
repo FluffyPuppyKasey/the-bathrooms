@@ -59,18 +59,19 @@ func _on_res_slider_value_changed(value):
 	config.save("user://options.cfg")
 
 func _on_back_to_menu_pressed():
-	get_tree().change_scene_to_file("res://ui/Menu.tscn")
-
+	if 	get_tree().get_current_scene().get_name() == "Menu":
+		$/root/Menu/HBoxContainer.visible = !$/root/Menu/HBoxContainer.visible
+		$/root/Menu/VBoxContainer.visible = !$/root/Menu/VBoxContainer.visible
+	elif get_tree().get_current_scene().get_name() == "Player":
+		$/root/PauseMenu/HBoxContainer.visible = !$/root/PauseMenu/HBoxContainer.visible
+		$/root/PauseMenu/VBoxContainer.visible = !$/root/PauseMenu/VBoxContainer.visible
+	$Label.hide()
+	$VBoxContainer.hide()
 
 func _on_sens_slider_value_changed(value):
 	config.set_value("options", "lookSensitivity", value)
 	$VBoxContainer/MouseSensitivity/Label2.text = str(value)
 	config.save("user://options.cfg")
-
-
-func _on_back_to_menu_in_game_pressed():
-	#$OptionsMenu.hide()
-	Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 
 
 func _on_res_slider_changed():

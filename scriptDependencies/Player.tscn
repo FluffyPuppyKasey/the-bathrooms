@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgxp5u4ff3rgi"]
+[gd_scene load_steps=8 format=3 uid="uid://cgxp5u4ff3rgi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jmwqx"]
 [ext_resource type="PackedScene" uid="uid://b4et75gax848w" path="res://ui/PauseMenu.tscn" id="2_l5cpk"]
-[ext_resource type="PackedScene" uid="uid://b5kcmveup7n3c" path="res://ui/OptionsMenu.tscn" id="3_e720f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hs8cd"]
 
@@ -87,5 +86,3 @@ mesh = SubResource("QuadMesh_0i6uk")
 skeleton = NodePath("../..")
 
 [node name="Menu" parent="." instance=ExtResource("2_l5cpk")]
-
-[node name="Options" parent="." instance=ExtResource("3_e720f")]

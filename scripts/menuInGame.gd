@@ -5,10 +5,7 @@ var err = config.load("user://options.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if 	get_tree().get_current_scene().get_name() == "Menu":
-		$Options.hide()
-	elif get_tree().get_current_scene().get_name() == "Player":
-		$Menu/Options.hide()
+	$Options/OptionsMenu.hide()
 	if config.get_value("options", "fullscreenMode") == 0:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	elif config.get_value("options", "fullscreenMode") == 1:
@@ -33,15 +30,15 @@ func _on_start_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_resume_game_pressed():
-	$Menu.hide()
+	$Options/OptionsMenu.hide()
+	$".".visible = !$".".visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_options_in_game_pressed():
-	#$/Player/Menu/Options.show()
-	$Menu/Options/Label.visible = !$Menu/Options/Label.visible
-	$Menu/Options/VBoxContainer.visible = !$Menu/Options/VBoxContainer.visible
+	$".".visible = !$".".visible
+	$Options/OptionsMenu.show()
 	
 func _on_options_pressed():
-	$HBoxContainer.hide()
-	$VBoxContainer.hide()
-	$Options.show()
+	$HBoxContainer.visible = !$HBoxContainer.visible
+	$VBoxContainer.visible = !$VBoxContainer.visible
+	$Options/OptionsMenu.show()

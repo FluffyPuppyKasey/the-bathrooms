@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4et75gax848w"]
+[gd_scene load_steps=3 format=3 uid="uid://b4et75gax848w"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_8k10e"]
+[ext_resource type="PackedScene" uid="uid://b5kcmveup7n3c" path="res://ui/OptionsMenu.tscn" id="2_wk74s"]
 
 [node name="Menu" type="MarginContainer"]
 anchors_preset = 15
@@ -36,9 +37,9 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 50.0
-offset_top = 238.0
+offset_top = 239.0
 offset_right = 524.0
-offset_bottom = 506.0
+offset_bottom = 505.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
@@ -50,24 +51,18 @@ text = "The Bathrooms"
 horizontal_alignment = 1
 
 [node name="ResumeGame" type="Button" parent="VBoxContainer"]
-offset_left = 112.0
 offset_top = 95.0
-offset_right = 361.0
-offset_bottom = 150.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
-theme_override_colors/font_hover_color = Color(0.606554, 0.429447, 0.589417, 1)
-theme_override_font_sizes/font_size = 34
+offset_right = 474.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 32
 text = "Resume Game"
 flat = true
-icon_alignment = 1
 
 [node name="OptionsInGame" type="Button" parent="VBoxContainer"]
 offset_left = 168.0
-offset_top = 154.0
+offset_top = 152.0
 offset_right = 306.0
-offset_bottom = 209.0
+offset_bottom = 207.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
@@ -80,9 +75,9 @@ icon_alignment = 1
 
 [node name="QuitGame" type="Button" parent="VBoxContainer"]
 offset_left = 144.0
-offset_top = 213.0
+offset_top = 211.0
 offset_right = 330.0
-offset_bottom = 268.0
+offset_bottom = 266.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
@@ -92,7 +87,13 @@ text = "Quit Game"
 flat = true
 icon_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_start_game_pressed"]
+[node name="OptionsMenu" parent="." instance=ExtResource("2_wk74s")]
+visible = false
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1255.0
+offset_bottom = 695.0
+
 [connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsInGame" to="." method="_on_options_in_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsInGame" to="." method="_on_options_pressed"]

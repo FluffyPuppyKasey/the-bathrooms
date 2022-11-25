@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://blrqli415sjt"]
+[gd_scene load_steps=4 format=3 uid="uid://blrqli415sjt"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_pb0wx"]
 [ext_resource type="PackedScene" uid="uid://b3h5ch20odt7n" path="res://ui/MenuBG.tscn" id="2_o00h5"]
+[ext_resource type="PackedScene" uid="uid://b5kcmveup7n3c" path="res://ui/OptionsMenu.tscn" id="3_yrk7r"]
 
 [node name="Menu" type="MarginContainer"]
 anchors_preset = 15
@@ -115,6 +116,17 @@ theme_override_font_sizes/font_size = 34
 text = "Quit Game"
 flat = true
 icon_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 664.0
+offset_bottom = 695.0
+size_flags_horizontal = 0
+
+[node name="OptionsMenu" parent="Options" instance=ExtResource("3_yrk7r")]
+offset_right = 614.0
+offset_bottom = 645.0
 
 [connection signal="pressed" from="HBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

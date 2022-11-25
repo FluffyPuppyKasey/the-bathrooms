@@ -14,9 +14,7 @@ var maxFOV = 75.0
 
 func _ready():
 	$Menu.hide()
-	$Options.hide()
-	print(get_tree().current_scene.name)
-	
+
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Pivot
@@ -27,7 +25,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#get_tree().paused = true
 		$Menu.show()
-		print(get_tree().current_scene.name)
+		$Menu/HBoxContainer.visible = $Menu/HBoxContainer.visible
+		$Menu/VBoxContainer.visible = $Menu/VBoxContainer.visible
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !event.is_action_pressed("ui_cancel"):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouseSens)

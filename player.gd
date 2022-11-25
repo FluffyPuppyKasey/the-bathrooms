@@ -1,5 +1,10 @@
 extends CharacterBody3D
 
+var config = ConfigFile.new()
+var err = config.load("user://options.cfg")
+
+var mouseSens = config.get_value("options", "lookSensitivity") / 2000
+
 var SPEED = 2.5
 var SPRINTSPEED = SPEED * 2
 const JUMP_VELOCITY = 4.5
@@ -7,11 +12,11 @@ const JUMP_VELOCITY = 4.5
 var minFOV = 25.0
 var maxFOV = 75.0
 
-var timeNow = Time.get_ticks_usec()
-
-var controllerLook = Input.get_vector("joyLookUp", "joyLookDown", "joyLookLeft", "joyLookRight")
-
-
+func _ready():
+	$Menu.hide()
+	$Options.hide()
+	print(get_tree().current_scene.name)
+	
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Pivot
@@ -20,14 +25,14 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		#get_tree().paused = true
+		$Menu.show()
+		print(get_tree().current_scene.name)
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !event.is_action_pressed("ui_cancel"):
 		if event is InputEventMouseMotion:
-			
-			neck.rotate_y(-event.relative.x * 0.005)
-			camera.rotate_x(-event.relative.y * 0.005)
+			neck.rotate_y(-event.relative.x * mouseSens)
+			camera.rotate_x(-event.relative.y * mouseSens)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -69,15 +74,15 @@ func _physics_process(delta: float) -> void:
 			$Pivot/Camera.fov = camFOV
 			
 	if Input.is_action_pressed("joyLookRight"):
-		neck.rotate_y(Input.get_action_strength("joyLookRight") * -0.05)
+		neck.rotate_y(Input.get_action_strength("joyLookRight") * -(mouseSens * 10))
 		
 	if Input.is_action_pressed("joyLookLeft"):
-		neck.rotate_y(Input.get_action_strength("joyLookLeft") * 0.05)
+		neck.rotate_y(Input.get_action_strength("joyLookLeft") * (mouseSens * 10))
 	
 	if Input.is_action_pressed("joyLookUp"):
-		camera.rotation.x -= Input.get_action_strength("joyLookUp") * -0.05
+		camera.rotation.x -= Input.get_action_strength("joyLookUp") * -(mouseSens * 10)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		
 	if Input.is_action_pressed("joyLookDown"):
-		camera.rotation.x -= Input.get_action_strength("joyLookDown") * 0.05
+		camera.rotation.x -= Input.get_action_strength("joyLookDown") * (mouseSens * 10)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))

@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck48pbyy7cbws"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_ttusu"]
+
+[node name="Menu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_ttusu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 50.0
+offset_top = 669.0
+offset_right = 1255.0
+offset_bottom = 695.0
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+offset_left = 542.0
+offset_right = 662.0
+offset_bottom = 26.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Pre-Alpha Build"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 50.0
+offset_top = 238.0
+offset_right = 524.0
+offset_bottom = 506.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+offset_right = 474.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 64
+text = "The Bathrooms"
+horizontal_alignment = 1
+
+[node name="ResumeGame" type="Button" parent="VBoxContainer"]
+offset_left = 112.0
+offset_top = 95.0
+offset_right = 361.0
+offset_bottom = 150.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
+theme_override_colors/font_hover_color = Color(0.606554, 0.429447, 0.589417, 1)
+theme_override_font_sizes/font_size = 34
+text = "Resume Game"
+flat = true
+icon_alignment = 1
+
+[node name="OptionsInGame" type="Button" parent="VBoxContainer"]
+offset_left = 168.0
+offset_top = 154.0
+offset_right = 306.0
+offset_bottom = 209.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
+theme_override_colors/font_hover_color = Color(0.606554, 0.429447, 0.589417, 1)
+theme_override_font_sizes/font_size = 34
+text = "Options
+"
+flat = true
+icon_alignment = 1
+
+[node name="QuitGame" type="Button" parent="VBoxContainer"]
+offset_left = 144.0
+offset_top = 213.0
+offset_right = 330.0
+offset_bottom = 268.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_pressed_color = Color(0.498039, 0.498039, 0.498039, 1)
+theme_override_colors/font_hover_color = Color(0.606554, 0.429447, 0.589417, 1)
+theme_override_font_sizes/font_size = 34
+text = "Quit Game"
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsInGame" to="." method="_on_options_in_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsInGame" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

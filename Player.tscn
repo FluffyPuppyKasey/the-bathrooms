@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://byotvwh2y2788"]
+[gd_scene load_steps=9 format=3 uid="uid://byotvwh2y2788"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ub60e"]
 [ext_resource type="Shader" path="res://PS1-PP.gdshader" id="2_tgxds"]
+[ext_resource type="PackedScene" uid="uid://nuswxysp2kw5" path="res://OptionsMenu.tscn" id="3_e0i77"]
+[ext_resource type="PackedScene" uid="uid://ck48pbyy7cbws" path="res://PauseMenu.tscn" id="3_xbqns"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hs8cd"]
 
@@ -39,3 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.631376)
 visibility_range_end = 1.6384e+08
 mesh = SubResource("QuadMesh_0i6uk")
 skeleton = NodePath("../..")
+
+[node name="Menu" parent="." instance=ExtResource("3_xbqns")]
+
+[node name="Options" parent="." instance=ExtResource("3_e0i77")]

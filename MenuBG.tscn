@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dj3egmsqwwgyo" path="res://floor.tres" id="1_ocvg0"]
 [ext_resource type="Script" path="res://dupe.gd" id="1_on2lj"]
-[ext_resource type="ArrayMesh" uid="uid://bo84qss1wl4ph" path="res://toilet.obj" id="2_4lgtb"]
+[ext_resource type="ArrayMesh" uid="uid://ciibv5kcwh4jp" path="res://toilet.obj" id="2_4lgtb"]
 [ext_resource type="Material" uid="uid://182jccm0ywgs" path="res://mainToilet.tres" id="3_al00u"]
 [ext_resource type="Material" uid="uid://5ikba1kiigmo" path="res://metal.tres" id="4_161nq"]
 [ext_resource type="PackedScene" uid="uid://c64fjo0u11jm3" path="res://ToiletInst.tscn" id="4_qh5xr"]

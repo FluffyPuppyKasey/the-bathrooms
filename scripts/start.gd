@@ -20,13 +20,11 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_credits_pressed():
 	OS.shell_open("https://twitter.com/FluffyPupyKasey")
 
 func _on_quit_game_pressed():
 	get_tree().quit()
-
 
 func _on_start_game_pressed():
 	get_tree().change_scene_to_file("res://levels/mainLevel.tscn")

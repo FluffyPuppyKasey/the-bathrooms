@@ -21,7 +21,6 @@ script = ExtResource("1_pb0wx")
 [node name="MenuBG" parent="." instance=ExtResource("2_o00h5")]
 
 [node name="isThereALimit" type="CheckBox" parent="."]
-layout_mode = 2
 offset_left = 1101.0
 offset_top = 50.0
 offset_right = 1255.0
@@ -31,7 +30,6 @@ size_flags_vertical = 0
 text = "Is There a Limit?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 633.0
 offset_right = 1255.0
@@ -40,7 +38,6 @@ size_flags_vertical = 8
 alignment = 1
 
 [node name="Credits" type="Button" parent="HBoxContainer"]
-layout_mode = 2
 offset_right = 310.0
 offset_bottom = 62.0
 theme_override_colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
@@ -50,7 +47,6 @@ text = "(c) 2022 FluffyPuppyKasey"
 flat = true
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
 offset_left = 475.0
 offset_top = 36.0
 offset_right = 595.0
@@ -62,7 +58,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits2" type="Label" parent="HBoxContainer"]
-layout_mode = 2
 offset_left = 839.0
 offset_right = 1205.0
 offset_bottom = 62.0
@@ -74,7 +69,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 238.0
 offset_right = 524.0
@@ -83,7 +77,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 474.0
 offset_bottom = 91.0
 theme_override_font_sizes/font_size = 64
@@ -91,7 +84,6 @@ text = "The Bathrooms"
 horizontal_alignment = 1
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 139.0
 offset_top = 95.0
 offset_right = 334.0
@@ -106,7 +98,6 @@ flat = true
 icon_alignment = 1
 
 [node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 168.0
 offset_top = 154.0
 offset_right = 306.0
@@ -122,7 +113,6 @@ flat = true
 icon_alignment = 1
 
 [node name="QuitGame" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 144.0
 offset_top = 213.0
 offset_right = 330.0
@@ -137,7 +127,6 @@ flat = true
 icon_alignment = 1
 
 [node name="Options" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 664.0
@@ -145,7 +134,6 @@ offset_bottom = 695.0
 size_flags_horizontal = 0
 
 [node name="OptionsMenu" parent="Options" instance=ExtResource("3_yrk7r")]
-layout_mode = 2
 offset_right = 614.0
 offset_bottom = 645.0
 

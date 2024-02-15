@@ -1,20 +1,18 @@
-[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cd2ah46q4dmqs"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cd2ah46q4dmqs"]
 
-[ext_resource type="Texture2D" uid="uid://bqr4ct1u3x1hw" path="res://textures/Concrete_Rough_8K_Albedo.jpg" id="1_8uq0k"]
-[ext_resource type="Texture2D" uid="uid://drvy3c6b7mkyb" path="res://textures/Concrete_Rough_8K_AO.jpg" id="2_n2fxq"]
-[ext_resource type="Texture2D" uid="uid://cxcsk281ifpfq" path="res://textures/Concrete_Rough_8K_Displacement.jpg" id="3_g5gmu"]
-[ext_resource type="Texture2D" uid="uid://c52i2op708b34" path="res://textures/Concrete_Rough_8K_Normal.jpg" id="4_payh5"]
-[ext_resource type="Texture2D" uid="uid://b3n27spk2w3yy" path="res://textures/Concrete_Rough_8K_Roughness.jpg" id="5_2n2ra"]
+[ext_resource type="Texture2D" uid="uid://bqr4ct1u3x1hw" path="res://textures/Rough Concrete/Concrete_Rough_8K_Albedo.jpg" id="1_1tx1x"]
+[ext_resource type="Texture2D" uid="uid://drvy3c6b7mkyb" path="res://textures/Rough Concrete/Concrete_Rough_8K_AO.jpg" id="2_adelq"]
+[ext_resource type="Texture2D" uid="uid://c52i2op708b34" path="res://textures/Rough Concrete/Concrete_Rough_8K_Normal.jpg" id="4_6jsd0"]
+[ext_resource type="Texture2D" uid="uid://b3n27spk2w3yy" path="res://textures/Rough Concrete/Concrete_Rough_8K_Roughness.jpg" id="5_tth15"]
 
 [resource]
-albedo_texture = ExtResource("1_8uq0k")
-roughness_texture = ExtResource("5_2n2ra")
+albedo_texture = ExtResource("1_1tx1x")
+roughness_texture = ExtResource("5_tth15")
 roughness_texture_channel = 4
 normal_enabled = true
-normal_texture = ExtResource("4_payh5")
+normal_texture = ExtResource("4_6jsd0")
 ao_enabled = true
 ao_light_affect = 0.25
-ao_texture = ExtResource("2_n2fxq")
+ao_texture = ExtResource("2_adelq")
 ao_texture_channel = 4
-heightmap_enabled = true
-heightmap_texture = ExtResource("3_g5gmu")
+uv1_scale = Vector3(128, 128, 128)

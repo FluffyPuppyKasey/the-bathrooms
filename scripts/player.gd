@@ -5,7 +5,7 @@ var err = config.load("user://options.cfg")
 
 var mouseSens = config.get_value("options", "lookSensitivity") / 2000
 
-var SPEED = 2.5
+var SPEED = 5
 var SPRINTSPEED = SPEED * 2
 const JUMP_VELOCITY = 4.5
 
@@ -15,7 +15,6 @@ var maxFOV = 75.0
 func _ready():
 	$Menu.hide()
 
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Pivot
 @onready var camera := $Pivot/Camera
@@ -23,7 +22,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#get_tree().paused = true
 		$Menu.show()
 		$Menu/HBoxContainer.visible = $Menu/HBoxContainer.visible
 		$Menu/VBoxContainer.visible = $Menu/VBoxContainer.visible
@@ -32,6 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			neck.rotate_y(-event.relative.x * mouseSens)
 			camera.rotate_x(-event.relative.y * mouseSens)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -59,18 +58,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-# Process mouse and keyboard input
-	if Input.is_action_pressed("zoom_in"):
-		if $Pivot/Camera.fov >= minFOV:
-			var camFOV = $Pivot/Camera.fov
-			camFOV = camFOV - 0.13332
-			$Pivot/Camera.fov = camFOV
-
-	if Input.is_action_pressed("zoom_out"):
-		if $Pivot/Camera.fov <= maxFOV:
-			var camFOV = $Pivot/Camera.fov
-			camFOV = camFOV + 0.1
-			$Pivot/Camera.fov = camFOV
 			
 	if Input.is_action_pressed("joyLookRight"):
 		neck.rotate_y(Input.get_action_strength("joyLookRight") * -(mouseSens * 10))
@@ -85,3 +72,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("joyLookDown"):
 		camera.rotation.x -= Input.get_action_strength("joyLookDown") * (mouseSens * 10)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+	if Input.is_action_just_pressed("flashlight"):
+		$SpotLight3D.visible = !$SpotLight3D.visible
+	$SpotLight3D.rotation = Vector3(camera.rotation.x, neck.rotation.y, camera.rotation.z)

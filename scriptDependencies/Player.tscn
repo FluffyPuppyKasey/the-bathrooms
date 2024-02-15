@@ -18,3 +18,9 @@ size = 0.125
 shape = SubResource("CapsuleShape3D_xrlfq")
 
 [node name="Menu" parent="." instance=ExtResource("2_l5cpk")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.577742, 0.219886, 0)
+visible = false
+spot_range = 10.0
+spot_angle = 30.0

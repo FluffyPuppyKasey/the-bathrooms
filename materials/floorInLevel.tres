@@ -1,21 +1,19 @@
-[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://ccn5cwdgi52t6"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ccn5cwdgi52t6"]
 
-[ext_resource type="Texture2D" uid="uid://dca6fghcn5gsd" path="res://textures/vjhmchyv_8K_Albedo.jpg" id="1_mcm1m"]
-[ext_resource type="Texture2D" uid="uid://bnl7duy463v00" path="res://textures/vjhmchyv_8K_AO.jpg" id="2_7mvkq"]
-[ext_resource type="Texture2D" uid="uid://146nbfo51h6w" path="res://textures/vjhmchyv_8K_Normal.jpg" id="3_4bjev"]
-[ext_resource type="Texture2D" uid="uid://kj247bfftl5f" path="res://textures/vjhmchyv_8K_Displacement.jpg" id="3_seq2r"]
-[ext_resource type="Texture2D" uid="uid://bwh4bbk0eut2j" path="res://textures/vjhmchyv_8K_Roughness.jpg" id="4_btcji"]
+[ext_resource type="Texture2D" uid="uid://dca6fghcn5gsd" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Albedo.jpg" id="1_yi5wi"]
+[ext_resource type="Texture2D" uid="uid://bnl7duy463v00" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_AO.jpg" id="2_55rwx"]
+[ext_resource type="Texture2D" uid="uid://146nbfo51h6w" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Normal.jpg" id="4_rx8mh"]
+[ext_resource type="Texture2D" uid="uid://bwh4bbk0eut2j" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Roughness.jpg" id="5_ik4a0"]
 
 [resource]
-albedo_texture = ExtResource("1_mcm1m")
-roughness_texture = ExtResource("4_btcji")
+albedo_texture = ExtResource("1_yi5wi")
+roughness_texture = ExtResource("5_ik4a0")
 roughness_texture_channel = 4
 normal_enabled = true
-normal_texture = ExtResource("3_4bjev")
+normal_texture = ExtResource("4_rx8mh")
 ao_enabled = true
 ao_light_affect = 0.25
-ao_texture = ExtResource("2_7mvkq")
+ao_texture = ExtResource("2_55rwx")
 ao_texture_channel = 4
-heightmap_texture = ExtResource("3_seq2r")
 uv1_scale = Vector3(16, 16, 16)
 texture_filter = 0

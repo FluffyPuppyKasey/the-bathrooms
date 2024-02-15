@@ -36,7 +36,7 @@ layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
 theme_override_colors/font_hover_color = Color(0.498039, 0.498039, 0.498039, 1)
 theme_override_font_sizes/font_size = 24
-text = "(c) 2022 FluffyPuppyKasey"
+text = "(c) 2022-2024 FluffyPuppyKasey"
 flat = true
 
 [node name="Label" type="Label" parent="HBoxContainer"]

@@ -3,7 +3,6 @@ extends Node
 var config = ConfigFile.new()
 var err = config.load("user://options.cfg")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if 	get_tree().get_current_scene().get_name() == "Menu":
 		$Options.hide()
@@ -17,8 +16,7 @@ func _ready():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	config.load("user://options.cfg")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_credits_pressed():
@@ -36,15 +34,15 @@ func _on_resume_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_options_in_game_pressed():
-	$Menu/Options.show()
+	$Menu/Options.visible = !$Menu/Options.visible
 	$Menu/Options/Label.visible = !$Menu/Options/Label.visible
 	$Menu/Options/VBoxContainer.visible = !$Menu/Options/VBoxContainer.visible
 
 func _on_options_pressed():
-	$HBoxContainer.hide()
-	$VBoxContainer.hide()
-	$Options.show()
-
+	$HBoxContainer.visible = !$HBoxContainer.visible
+	$VBoxContainer.visible = !$VBoxContainer.visible
+	$isThereALimit.visible = !$isThereALimit.visible
+	$Options.visible = !$Options.visible
 
 func _on_is_there_a_limit_toggled(button_pressed):
 	get_node("MenuBG").isThereALimit = button_pressed

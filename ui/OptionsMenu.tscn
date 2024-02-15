@@ -112,10 +112,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_32lav")
 layout_mode = 2
 text = "Back"
 
-[connection signal="changed" from="VBoxContainer/Resolution/ResSlider" to="." method="_on_res_slider_changed"]
 [connection signal="value_changed" from="VBoxContainer/Resolution/ResSlider" to="." method="_on_res_slider_value_changed"]
 [connection signal="toggled" from="VBoxContainer/FSR/FSRCheckBox" to="." method="_on_fsr_check_box_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Fullscreen/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/MouseSensitivity/SensSlider" to="." method="_on_sens_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/BackToMenuInGame" to="." method="_on_back_to_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/BackToMenuInGame" to="." method="_on_back_to_menu_in_game_pressed"]

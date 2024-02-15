@@ -5,7 +5,6 @@ var err = config.load("user://options.cfg")
 
 var mouseSens = config.get_value("options", "lookSensitivity")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if err != OK:
 		return
@@ -22,7 +21,6 @@ func _ready():
 		elif config.get_value("options", "fullscreenMode") == 2:
 			$VBoxContainer/Fullscreen/OptionButton.select(2)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
@@ -63,8 +61,8 @@ func _on_back_to_menu_pressed():
 	elif get_tree().get_current_scene().get_name() == "Player":
 		$/root/PauseMenu/HBoxContainer.visible = !$/root/PauseMenu/HBoxContainer.visible
 		$/root/PauseMenu/VBoxContainer.visible = !$/root/PauseMenu/VBoxContainer.visible
-	$Label.hide()
-	$VBoxContainer.hide()
+	$Label.visible = !$Label.visible
+	$VBoxContainer.visible = !$VBoxContainer.visible
 
 func _on_sens_slider_value_changed(value):
 	config.set_value("options", "lookSensitivity", value)
@@ -72,6 +70,7 @@ func _on_sens_slider_value_changed(value):
 	config.save("user://options.cfg")
 
 func _on_backToMenu_pressed():
-	$HBoxContainer.show()
-	$VBoxContainer.show()
-	$Options.hide()
+	$HBoxContainer.visible = !$HBoxContainer.visible
+	$VBoxContainer.visible = !$VBoxContainer.visible
+	$isThereALimit.visible = !$isThereALimit.visible
+	$Options.visible = !$Options.visible

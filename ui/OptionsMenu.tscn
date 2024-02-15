@@ -97,6 +97,7 @@ text = "Look Sensitivity: "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+max_value = 50.0
 rounded = true
 
 [node name="Label2" type="Label" parent="VBoxContainer/MouseSensitivity"]

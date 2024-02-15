@@ -34,9 +34,9 @@ func _on_resume_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_options_in_game_pressed():
-	$Menu/Options.visible = !$Menu/Options.visible
-	$Menu/Options/Label.visible = !$Menu/Options/Label.visible
-	$Menu/Options/VBoxContainer.visible = !$Menu/Options/VBoxContainer.visible
+	$Options.visible = !$Options.visible
+	$Options/Label.visible = !$Options/Label.visible
+	$Options/VBoxContainer.visible = !$Options/VBoxContainer.visible
 
 func _on_options_pressed():
 	$HBoxContainer.visible = !$HBoxContainer.visible

@@ -12,7 +12,7 @@ func _ready():
 		t = await(get_tree().create_timer(2.5))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if t.time_left <= 0.0:
 		if isThereALimit == true:
 			add_child(ToiletInstance.instantiate())

@@ -15,6 +15,7 @@ func _ready():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	elif config.get_value("options", "fullscreenMode") == 2:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	config.load("user://options.cfg")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

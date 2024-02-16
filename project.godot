@@ -26,6 +26,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_left={

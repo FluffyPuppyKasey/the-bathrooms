@@ -221,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -246,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet8"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -271,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet9"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -296,7 +296,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet7"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -321,7 +321,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet10"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -346,7 +346,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet11"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -371,7 +371,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Wall/Toilet2"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -396,7 +396,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall/Toilet3"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -421,7 +421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall/Toilet4"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -446,7 +446,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Wall/Toilet5"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -471,7 +471,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Wall/Toilet6"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -509,7 +509,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -534,7 +534,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet8"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -559,7 +559,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet9"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -584,7 +584,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet7"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -609,7 +609,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet10"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -634,7 +634,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet11"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -659,7 +659,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Wall3/Toilet2"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -684,7 +684,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall3/Toilet3"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -709,7 +709,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall3/Toilet4"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -734,7 +734,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Wall3/Toilet5"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -759,7 +759,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Wall3/Toilet6"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -797,7 +797,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -822,7 +822,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet8"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -847,7 +847,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet9"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -872,7 +872,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet7"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -897,7 +897,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet10"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -922,7 +922,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet11"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -947,7 +947,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Wall2/Toilet2"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -972,7 +972,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall2/Toilet3"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -997,7 +997,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall2/Toilet4"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1022,7 +1022,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Wall2/Toilet5"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1047,7 +1047,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Wall2/Toilet6"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1086,7 +1086,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1111,7 +1111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet8"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1136,7 +1136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet9"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1161,7 +1161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet7"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1186,7 +1186,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet10"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1211,7 +1211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet11"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1236,7 +1236,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Wall4/Toilet2"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1261,7 +1261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall4/Toilet3"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1286,7 +1286,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Wall4/Toilet4"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1311,7 +1311,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Wall4/Toilet5"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0
@@ -1336,7 +1336,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
 shape = SubResource("BoxShape3D_ir4t5")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Wall4/Toilet6"]
-transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
 light_color = Color(0.658824, 0.560784, 0.368627, 1)
 light_energy = 12.0
 light_indirect_energy = 2.0

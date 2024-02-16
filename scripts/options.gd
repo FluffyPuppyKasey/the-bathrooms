@@ -14,6 +14,7 @@ func _ready():
 		$VBoxContainer/FSR/FSRCheckBox.button_pressed = config.get_value("options", "fsr")
 		$VBoxContainer/MouseSensitivity/SensSlider.value = config.get_value("options", "lookSensitivity")
 		$VBoxContainer/MouseSensitivity/Label2.text = str(config.get_value("options", "lookSensitivity"))
+		$VBoxContainer/VHSFilter/VHSFilterCheckbox.button_pressed = config.get_value("options", "vhs_filter")
 		if config.get_value("options", "fullscreenMode") == 0:
 			$VBoxContainer/Fullscreen/OptionButton.select(0)
 		elif config.get_value("options", "fullscreenMode") == 1:
@@ -74,3 +75,13 @@ func _on_backToMenu_pressed():
 	$VBoxContainer.visible = !$VBoxContainer.visible
 	$isThereALimit.visible = !$isThereALimit.visible
 	$Options.visible = !$Options.visible
+
+func _on_vhs_filter_checkbox_toggled(button_pressed):
+	if get_tree().current_scene == $mainLevel:
+		$Player/Pivot/Camera/CanvasLayer3.visible = !$Player/Pivot/Camera/CanvasLayer3.visible
+		$Player/Pivot/Camera/CanvasLayer.visible = !$Player/Pivot/Camera/CanvasLayer.visible
+		$Player/Pivot/Camera/CanvasLayer4.visible = !$Player/Pivot/Camera/CanvasLayer4.visible
+		config.set_value("options", "vhs_filter", button_pressed)
+	else:
+		config.set_value("options", "vhs_filter", button_pressed)
+	

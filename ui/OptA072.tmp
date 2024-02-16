@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5kcmveup7n3c"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_und70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32lav"]
+
+[node name="OptionsMenu" type="MarginContainer"]
+offset_right = 626.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_und70")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "                                                                                                                                               "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ResLabel" type="Label" parent="VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resolution Scale: "
+
+[node name="ResSlider" type="HSlider" parent="VBoxContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.25
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ResScaleLabel" type="Label" parent="VBoxContainer/Resolution"]
+layout_mode = 2
+
+[node name="FSR" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FSRLabel" type="Label" parent="VBoxContainer/FSR"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "FSR 2.2: "
+horizontal_alignment = 1
+
+[node name="FSRCheckBox" type="CheckBox" parent="VBoxContainer/FSR"]
+layout_mode = 2
+
+[node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FSLabel" type="Label" parent="VBoxContainer/Fullscreen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Fullscreen: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Fullscreen"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 2
+
+[node name="MouseSensitivity" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MouseSensitivity"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Look Sensitivity: "
+
+[node name="SensSlider" type="HSlider" parent="VBoxContainer/MouseSensitivity"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 50.0
+rounded = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/MouseSensitivity"]
+layout_mode = 2
+
+[node name="VHSFilter" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/VHSFilter"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "VHS Filter:"
+
+[node name="VHSFilterCheckbox" type="CheckBox" parent="VBoxContainer/VHSFilter"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_32lav")
+
+[node name="BackToMenuInGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/Resolution/ResSlider" to="." method="_on_res_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer/FSR/FSRCheckBox" to="." method="_on_fsr_check_box_toggled"]
+[connection signal="item_selected" from="VBoxContainer/Fullscreen/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/MouseSensitivity/SensSlider" to="." method="_on_sens_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer/VHSFilter/VHSFilterCheckbox" to="." method="_on_vhs_filter_checkbox_toggled"]
+[connection signal="pressed" from="VBoxContainer/BackToMenuInGame" to="." method="_on_back_to_menu_pressed"]

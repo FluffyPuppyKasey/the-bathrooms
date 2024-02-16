@@ -102,6 +102,7 @@ flat = true
 icon_alignment = 1
 
 [node name="Options" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 

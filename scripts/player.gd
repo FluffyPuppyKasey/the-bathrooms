@@ -9,11 +9,8 @@ var SPEED = 5
 var SPRINTSPEED = SPEED * 2
 const JUMP_VELOCITY = 4.5
 
-var minFOV = 25.0
-var maxFOV = 75.0
-
 func _ready():
-	$Menu.hide()
+	$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Pivot
@@ -22,9 +19,12 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$Menu.show()
-		$Menu/HBoxContainer.visible = $Menu/HBoxContainer.visible
-		$Menu/VBoxContainer.visible = $Menu/VBoxContainer.visible
+		$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
+		$Pivot/Camera/CanvasLayer2/Menu/HBoxContainer.visible = $Pivot/Camera/CanvasLayer2/Menu/HBoxContainer.visible
+		$Pivot/Camera/CanvasLayer2/Menu/VBoxContainer.visible = $Pivot/Camera/CanvasLayer2/Menu/VBoxContainer.visible
+		$Pivot/Camera/CanvasLayer5.visible = !$Pivot/Camera/CanvasLayer5.visible
+	if $Pivot/Camera/CanvasLayer2.visible == false and event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !event.is_action_pressed("ui_cancel"):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouseSens)
@@ -76,3 +76,4 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("flashlight"):
 		$SpotLight3D.visible = !$SpotLight3D.visible
 	$SpotLight3D.rotation = Vector3(camera.rotation.x, neck.rotation.y, camera.rotation.z)
+	

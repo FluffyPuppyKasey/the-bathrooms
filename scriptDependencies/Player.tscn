@@ -1,7 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgxp5u4ff3rgi"]
+[gd_scene load_steps=12 format=3 uid="uid://cgxp5u4ff3rgi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jmwqx"]
+[ext_resource type="Shader" path="res://shaders/tv.gdshader" id="2_2r6k4"]
 [ext_resource type="PackedScene" uid="uid://b4et75gax848w" path="res://ui/PauseMenu.tscn" id="2_l5cpk"]
+[ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="2_l62nh"]
+[ext_resource type="Shader" path="res://shaders/lens.gdshader" id="2_mkxjx"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ssish"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsl15"]
+shader = ExtResource("2_mkxjx")
+shader_parameter/strength = 0.035
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxh20"]
+shader = ExtResource("2_l62nh")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 5.0
+shader_parameter/color_displacement = 2.0
+shader_parameter/lines_velocity = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32b5g"]
+shader = ExtResource("2_2r6k4")
+shader_parameter/vertMovementOpt = 0.1
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.3
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhfcw"]
+shader = ExtResource("2_ssish")
+shader_parameter/amount = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrlfq"]
 
@@ -12,12 +40,76 @@ script = ExtResource("1_jmwqx")
 
 [node name="Camera" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.667, 0)
+current = true
 size = 0.125
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="Pivot/Camera"]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Pivot/Camera/CanvasLayer4"]
+material = SubResource("ShaderMaterial_wsl15")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Pivot/Camera"]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Pivot/Camera/CanvasLayer"]
+material = SubResource("ShaderMaterial_rxh20")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Pivot/Camera"]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Pivot/Camera/CanvasLayer3"]
+material = SubResource("ShaderMaterial_32b5g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="Pivot/Camera"]
+layer = 9
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pivot/Camera/CanvasLayer5"]
+material = SubResource("ShaderMaterial_rhfcw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Pivot/Camera"]
+layer = 10
+follow_viewport_enabled = true
+
+[node name="Menu" parent="Pivot/Camera/CanvasLayer2" instance=ExtResource("2_l5cpk")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xrlfq")
-
-[node name="Menu" parent="." instance=ExtResource("2_l5cpk")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.577742, 0.219886, 0)

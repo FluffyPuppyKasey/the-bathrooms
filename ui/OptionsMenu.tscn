@@ -59,6 +59,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "FSR 2.2: "
+horizontal_alignment = 1
 
 [node name="FSRCheckBox" type="CheckBox" parent="VBoxContainer/FSR"]
 layout_mode = 2
@@ -103,6 +104,18 @@ rounded = true
 [node name="Label2" type="Label" parent="VBoxContainer/MouseSensitivity"]
 layout_mode = 2
 
+[node name="VHSFilter" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/VHSFilter"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "VHS Filter:"
+
+[node name="VHSFilterCheckbox" type="CheckBox" parent="VBoxContainer/VHSFilter"]
+layout_mode = 2
+
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
@@ -116,4 +129,5 @@ text = "Back"
 [connection signal="toggled" from="VBoxContainer/FSR/FSRCheckBox" to="." method="_on_fsr_check_box_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Fullscreen/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/MouseSensitivity/SensSlider" to="." method="_on_sens_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer/VHSFilter/VHSFilterCheckbox" to="." method="_on_vhs_filter_checkbox_toggled"]
 [connection signal="pressed" from="VBoxContainer/BackToMenuInGame" to="." method="_on_back_to_menu_pressed"]

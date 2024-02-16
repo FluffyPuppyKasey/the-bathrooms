@@ -4,10 +4,6 @@ var config = ConfigFile.new()
 var err = config.load("user://options.cfg")
 
 func _ready():
-	if 	get_tree().get_current_scene().get_name() == "Menu":
-		$Options.hide()
-	elif get_tree().get_current_scene().get_name() == "Player":
-		$Menu/Options.hide()
 	if config.get_value("options", "fullscreenMode") == 0:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	elif config.get_value("options", "fullscreenMode") == 1:
@@ -30,13 +26,16 @@ func _on_start_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_resume_game_pressed():
-	$Menu.hide()
+	$".".visible = !$".".visible
+	$"../../CanvasLayer5".visible = !$"../../CanvasLayer5".visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_options_in_game_pressed():
+	$HBoxContainer.visible = !$HBoxContainer.visible
+	$VBoxContainer.visible = !$VBoxContainer.visible
 	$Options.visible = !$Options.visible
-	$Options/Label.visible = !$Options/Label.visible
-	$Options/VBoxContainer.visible = !$Options/VBoxContainer.visible
+	#$Options/Label.visible = !$Options/Label.visible
+	#$Options/VBoxContainer.visible = !$Options/VBoxContainer.visible
 
 func _on_options_pressed():
 	$HBoxContainer.visible = !$HBoxContainer.visible

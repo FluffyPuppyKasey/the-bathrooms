@@ -4,12 +4,20 @@ var config = ConfigFile.new()
 var err = config.load("user://options.cfg")
 
 func _ready():
-	if config.get_value("options", "fullscreenMode") == 0:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	elif config.get_value("options", "fullscreenMode") == 1:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	elif config.get_value("options", "fullscreenMode") == 2:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	if FileAccess.file_exists("user://options.cfg") == false :
+		config.set_value("options", "fullscreenMode", 0)
+		config.set_value("options", "resolutionScale", 1.0)
+		config.set_value("options", "lookSensitivity", 10.0)
+		config.set_value("options", "fsr", false)
+		config.set_value("options", "vhs_filter", true)
+		config.save("user://options.cfg")
+	elif FileAccess.file_exists("user://options.cfg") == true:
+		if config.get_value("options", "fullscreenMode") == 0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		elif config.get_value("options", "fullscreenMode") == 1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		elif config.get_value("options", "fullscreenMode") == 2:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	config.load("user://options.cfg")
 
 func _process(_delta):

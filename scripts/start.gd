@@ -34,8 +34,6 @@ func _on_options_in_game_pressed():
 	$HBoxContainer.visible = !$HBoxContainer.visible
 	$VBoxContainer.visible = !$VBoxContainer.visible
 	$Options.visible = !$Options.visible
-	#$Options/Label.visible = !$Options/Label.visible
-	#$Options/VBoxContainer.visible = !$Options/VBoxContainer.visible
 
 func _on_options_pressed():
 	$HBoxContainer.visible = !$HBoxContainer.visible

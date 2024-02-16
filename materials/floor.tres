@@ -15,4 +15,4 @@ ao_enabled = true
 ao_light_affect = 0.25
 ao_texture = ExtResource("2_k4aad")
 ao_texture_channel = 4
-uv1_scale = Vector3(64, 64, 64)
+uv1_scale = Vector3(32, 32, 32)

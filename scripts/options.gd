@@ -71,10 +71,10 @@ func _on_backToMenu_pressed():
 	config.save("user://options.cfg")
 
 func _on_vhs_filter_checkbox_toggled(button_pressed):
-	if get_tree().current_scene == $Player:
-		$"../../CanvasLayer3".visible = !$"../../CanvasLayer3".visible
-		$"../../CanvasLayer".visible = !$"../../CanvasLayer".visible
-		$"../../CanvasLayer4".visible = !$"../../CanvasLayer4".visible
+	if get_tree().current_scene == $".":
+		$Player/CanvasLayer3.visible = !$Player/CanvasLayer3.visible
+		$Player/CanvasLayer.visible = !$Player/CanvasLayer.visible
+		$Player/CanvasLayer4.visible = !$Player/CanvasLayer4.visible
 		config.set_value("options", "vhs_filter", button_pressed)
 	else:
 		config.set_value("options", "vhs_filter", button_pressed)

@@ -7,7 +7,7 @@ var mouseSens = config.get_value("options", "lookSensitivity") / 2000
 
 var SPEED = 5
 var SPRINTSPEED = SPEED * 2
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.0
 
 func _ready():
 	$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
@@ -56,14 +56,14 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("joyLookRight"):
 		neck.rotate_y(Input.get_action_strength("joyLookRight") * -(mouseSens * 10))
-		
+
 	if Input.is_action_pressed("joyLookLeft"):
 		neck.rotate_y(Input.get_action_strength("joyLookLeft") * (mouseSens * 10))
-	
+
 	if Input.is_action_pressed("joyLookUp"):
 		camera.rotation.x -= Input.get_action_strength("joyLookUp") * -(mouseSens * 10)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-		
+
 	if Input.is_action_pressed("joyLookDown"):
 		camera.rotation.x -= Input.get_action_strength("joyLookDown") * (mouseSens * 10)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
@@ -71,4 +71,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("flashlight"):
 		$SpotLight3D.visible = !$SpotLight3D.visible
 	$SpotLight3D.rotation = Vector3(camera.rotation.x, neck.rotation.y, camera.rotation.z)
-	
+
+func _process(delta):
+	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"

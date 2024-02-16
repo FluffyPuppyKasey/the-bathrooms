@@ -43,6 +43,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.667, 0)
 current = true
 size = 0.125
 
+[node name="CanvasLayer6" type="CanvasLayer" parent="Pivot/Camera"]
+layer = 11
+
+[node name="FPSCounter" type="Label" parent="Pivot/Camera/CanvasLayer6"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CanvasLayer4" type="CanvasLayer" parent="Pivot/Camera"]
 follow_viewport_enabled = true
 

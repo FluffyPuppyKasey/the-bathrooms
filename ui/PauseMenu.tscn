@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4et75gax848w"]
 
-[ext_resource type="Script" path="res://scripts/start.gd" id="1_8k10e"]
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_ekvd6"]
 [ext_resource type="PackedScene" uid="uid://b5kcmveup7n3c" path="res://ui/OptionsMenu.tscn" id="2_wk74s"]
 
 [node name="Menu" type="MarginContainer"]
@@ -15,7 +15,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
-script = ExtResource("1_8k10e")
+script = ExtResource("1_ekvd6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -52,7 +52,7 @@ text = "Resume Game"
 flat = true
 icon_alignment = 1
 
-[node name="OptionsInGame" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -82,5 +82,5 @@ size_flags_horizontal = 0
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsInGame" to="." method="_on_options_in_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

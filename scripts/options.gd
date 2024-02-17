@@ -63,7 +63,6 @@ func _on_back_to_menu_pressed():
 		$"/root/Menu/Options".visible = !$"/root/Menu/Options".visible
 		config.save("user://options.cfg")
 	elif get_tree().get_current_scene().get_name() == "mainLevel":
-		print(get_parent().get_parent().get_child(1))
 		get_parent().visible = !get_parent().visible
 		get_parent().get_parent().get_child(1).visible = !get_parent().get_parent().get_child(1).visible
 		get_parent().get_parent().get_child(2).visible = !get_parent().get_parent().get_child(2).visible

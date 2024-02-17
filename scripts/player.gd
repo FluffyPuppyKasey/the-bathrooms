@@ -20,8 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
-		$Pivot/Camera/CanvasLayer2/Menu/HBoxContainer.visible = $Pivot/Camera/CanvasLayer2/Menu/HBoxContainer.visible
-		$Pivot/Camera/CanvasLayer2/Menu/VBoxContainer.visible = $Pivot/Camera/CanvasLayer2/Menu/VBoxContainer.visible
+		$Pivot/Camera/CanvasLayer2/PauseMenu/VBoxContainer.visible = $Pivot/Camera/CanvasLayer2/PauseMenu/VBoxContainer.visible
+		$Pivot/Camera/CanvasLayer2/PauseMenu/HBoxContainer.visible = $Pivot/Camera/CanvasLayer2/PauseMenu/HBoxContainer.visible
 		$Pivot/Camera/CanvasLayer5.visible = !$Pivot/Camera/CanvasLayer5.visible
 	if $Pivot/Camera/CanvasLayer2.visible == false and event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -72,5 +72,5 @@ func _physics_process(delta: float) -> void:
 		$SpotLight3D.visible = !$SpotLight3D.visible
 	$SpotLight3D.rotation = Vector3(camera.rotation.x, neck.rotation.y, camera.rotation.z)
 
-func _process(delta):
+func _process(_delta):
 	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"

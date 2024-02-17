@@ -15,6 +15,6 @@ func _on_resume_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_options_pressed():
-	$HBoxContainer.visible = !$HBoxContainer.visible
 	$VBoxContainer.visible = !$VBoxContainer.visible
+	$HBoxContainer.visible = !$HBoxContainer.visible
 	$Options.visible = !$Options.visible

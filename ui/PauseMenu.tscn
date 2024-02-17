@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_ekvd6"]
 [ext_resource type="PackedScene" uid="uid://b5kcmveup7n3c" path="res://ui/OptionsMenu.tscn" id="2_wk74s"]
 
-[node name="Menu" type="MarginContainer"]
+[node name="PauseMenu" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +16,14 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 script = ExtResource("1_ekvd6")
+
+[node name="Options" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="OptionsMenu" parent="Options" instance=ExtResource("2_wk74s")]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -72,14 +80,6 @@ theme_override_font_sizes/font_size = 34
 text = "Quit Game"
 flat = true
 icon_alignment = 1
-
-[node name="Options" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="OptionsMenu" parent="Options" instance=ExtResource("2_wk74s")]
-layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -1,5 +1,8 @@
 extends Node
 
+var config = ConfigFile.new()
+var err = config.load("user://options.cfg")
+
 var ToiletInstance = preload("res://scriptDependencies/ToiletInst.tscn")
 var t
 var isThereALimit = false
@@ -15,5 +18,5 @@ func _process(_delta):
 		if isThereALimit == true:
 			add_child(ToiletInstance.instantiate())
 		elif isThereALimit == false:
-			t = get_tree().create_timer(2.5)
+			
 			add_child(ToiletInstance.instantiate())

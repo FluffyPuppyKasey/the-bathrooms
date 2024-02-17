@@ -113,7 +113,7 @@ mouse_filter = 2
 layer = 10
 follow_viewport_enabled = true
 
-[node name="Menu" parent="Pivot/Camera/CanvasLayer2" instance=ExtResource("2_l5cpk")]
+[node name="PauseMenu" parent="Pivot/Camera/CanvasLayer2" instance=ExtResource("2_l5cpk")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xrlfq")

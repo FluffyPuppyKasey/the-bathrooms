@@ -7,7 +7,7 @@
 shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
-uniform float amount :hint_range(0.0, 1.5) = 0.1;
+uniform float amount :hint_range(0.0, 1.5) = 1.5;
 
 vec2 Circle(float Start, float Points, float Point) {
 	float Rad = (3.141592 * 3.0 * (1.0 / Points)) * (Point + Start);

@@ -18,5 +18,5 @@ func _process(_delta):
 		if isThereALimit == true:
 			add_child(ToiletInstance.instantiate())
 		elif isThereALimit == false:
-			
+			t = get_tree().create_timer(2.5)
 			add_child(ToiletInstance.instantiate())

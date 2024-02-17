@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dh77rkfswlqxv"]
+
+[ext_resource type="Texture2D" uid="uid://beotk6id66yee" path="res://models/monitor_computer_Material_BaseColor.png" id="1_so75b"]
+[ext_resource type="Texture2D" uid="uid://tewps2qgu0i2" path="res://models/monitor_computer_Material_Normal.png" id="2_eq28w"]
+[ext_resource type="Texture2D" uid="uid://cvwkcv31vsgpo" path="res://models/monitor_computer_Material_Metallic-computer_Material_Roughness.png" id="3_m3fra"]
+
+[resource]
+albedo_texture = ExtResource("1_so75b")
+roughness_texture = ExtResource("3_m3fra")
+normal_enabled = true
+normal_texture = ExtResource("2_eq28w")

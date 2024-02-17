@@ -7,7 +7,8 @@ var mouseSens = config.get_value("options", "lookSensitivity") / 2000
 
 var SPEED = 5
 var SPRINTSPEED = SPEED * 2
-const JUMP_VELOCITY = 5.0
+const JUMP_VELOCITY = 2.5
+const SLIDE_VELOCITY = 5
 
 func _ready():
 	$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
@@ -72,3 +73,5 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta):
 	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"
+
+

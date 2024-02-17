@@ -15,6 +15,7 @@ ao_enabled = true
 ao_light_affect = 0.25
 ao_texture = ExtResource("2_k4aad")
 ao_texture_channel = 4
+backlight_enabled = true
 uv1_scale = Vector3(16, 16, 16)
 uv2_scale = Vector3(16, 16, 16)
 texture_filter = 0

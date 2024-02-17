@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgxp5u4ff3rgi"]
+[gd_scene load_steps=13 format=3 uid="uid://cgxp5u4ff3rgi"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_jmwqx"]
 [ext_resource type="Shader" path="res://shaders/tv.gdshader" id="2_2r6k4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://shaders/vhs.gdshader" id="2_l62nh"]
 [ext_resource type="Shader" path="res://shaders/lens.gdshader" id="2_mkxjx"]
 [ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_ssish"]
+[ext_resource type="PackedScene" uid="uid://ccf03t26774en" path="res://computer.tscn" id="6_qofkc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wsl15"]
 shader = ExtResource("2_mkxjx")
@@ -108,6 +109,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="CanvasLayer7" type="CanvasLayer" parent="Pivot/Camera"]
+
+[node name="Computer" parent="Pivot/Camera/CanvasLayer7" instance=ExtResource("6_qofkc")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Pivot/Camera"]
 layer = 10

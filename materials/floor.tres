@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cy4xnmng2iwt5"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ccn5cwdgi52t6"]
 
 [ext_resource type="Texture2D" uid="uid://dca6fghcn5gsd" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Albedo.jpg" id="1_nquxr"]
 [ext_resource type="Texture2D" uid="uid://bnl7duy463v00" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_AO.jpg" id="2_k4aad"]
@@ -15,4 +15,11 @@ ao_enabled = true
 ao_light_affect = 0.25
 ao_texture = ExtResource("2_k4aad")
 ao_texture_channel = 4
-uv1_scale = Vector3(32, 32, 32)
+uv1_scale = Vector3(16, 16, 16)
+uv2_scale = Vector3(16, 16, 16)
+texture_filter = 0
+grow = true
+point_size = 128.0
+proximity_fade_distance = 0.0
+distance_fade_min_distance = 600.28
+distance_fade_max_distance = 0.0

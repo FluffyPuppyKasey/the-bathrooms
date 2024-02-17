@@ -66,7 +66,7 @@ func _on_back_to_menu_pressed():
 		get_parent().visible = !get_parent().visible
 		get_parent().get_parent().get_child(1).visible = !get_parent().get_parent().get_child(1).visible
 		get_parent().get_parent().get_child(2).visible = !get_parent().get_parent().get_child(2).visible
-
+# nice.
 func _on_sens_slider_value_changed(value):
 	config.set_value("options", "lookSensitivity", value)
 	$VBoxContainer/MouseSensitivity/Label2.text = str(value)

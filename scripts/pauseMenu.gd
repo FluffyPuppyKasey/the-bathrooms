@@ -10,7 +10,7 @@ func _on_quit_game_pressed():
 	get_tree().quit()
 
 func _on_resume_game_pressed():
-	$".".visible = !$".".visible
+	get_parent().visible = !get_parent().visible
 	$"../../CanvasLayer5".visible = !$"../../CanvasLayer5".visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

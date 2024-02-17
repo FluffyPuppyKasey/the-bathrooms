@@ -20,8 +20,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
-		$Pivot/Camera/CanvasLayer2/PauseMenu/VBoxContainer.visible = $Pivot/Camera/CanvasLayer2/PauseMenu/VBoxContainer.visible
-		$Pivot/Camera/CanvasLayer2/PauseMenu/HBoxContainer.visible = $Pivot/Camera/CanvasLayer2/PauseMenu/HBoxContainer.visible
 		$Pivot/Camera/CanvasLayer5.visible = !$Pivot/Camera/CanvasLayer5.visible
 	if $Pivot/Camera/CanvasLayer2.visible == false and event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

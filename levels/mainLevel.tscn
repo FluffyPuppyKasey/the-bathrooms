@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cgxp5u4ff3rgi" path="res://scriptDependencies/Player.tscn" id="1_2n5o3"]
 [ext_resource type="Script" path="res://levels/mainLevel.gd" id="1_mskfk"]
-[ext_resource type="Material" uid="uid://ccn5cwdgi52t6" path="res://materials/floorInLevel.tres" id="2_8qe4c"]
+[ext_resource type="Material" uid="uid://ccn5cwdgi52t6" path="res://materials/floor.tres" id="2_8qe4c"]
 [ext_resource type="Material" uid="uid://cd2ah46q4dmqs" path="res://materials/ceiling.tres" id="2_lrmkk"]
 [ext_resource type="Material" uid="uid://bl7uq0lrpvg8m" path="res://materials/walls.tres" id="3_8da1b"]
 [ext_resource type="ArrayMesh" uid="uid://ciibv5kcwh4jp" path="res://models/toilet.obj" id="3_oumry"]

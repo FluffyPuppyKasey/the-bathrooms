@@ -1,13 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3h5ch20odt7n"]
+[gd_scene load_steps=10 format=3 uid="uid://b3h5ch20odt7n"]
 
 [ext_resource type="Script" path="res://scripts/dupe.gd" id="1_uajee"]
 [ext_resource type="ArrayMesh" uid="uid://ciibv5kcwh4jp" path="res://models/toilet.obj" id="2_cja8b"]
-[ext_resource type="Texture2D" uid="uid://dca6fghcn5gsd" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Albedo.jpg" id="4_s7d6a"]
 [ext_resource type="Material" uid="uid://ccn5cwdgi52t6" path="res://materials/floor.tres" id="5_bs0rd"]
-[ext_resource type="Texture2D" uid="uid://bnl7duy463v00" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_AO.jpg" id="5_d6e7h"]
 [ext_resource type="PackedScene" uid="uid://c3jtwo5j4fsbt" path="res://scriptDependencies/ToiletInst.tscn" id="6_bch07"]
-[ext_resource type="Texture2D" uid="uid://146nbfo51h6w" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Normal.jpg" id="6_cdcv3"]
-[ext_resource type="Texture2D" uid="uid://bwh4bbk0eut2j" path="res://textures/Patterned Marble Tiles/vjhmchyv_8K_Roughness.jpg" id="7_luhoe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_44aht"]
 sky_top_color = Color(0.52549, 0.435294, 0.258824, 1)
@@ -33,21 +29,8 @@ volumetric_fog_albedo = Color(0.682353, 0.596078, 0.447059, 1)
 volumetric_fog_length = 8.0
 volumetric_fog_ambient_inject = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8jos"]
-albedo_texture = ExtResource("4_s7d6a")
-roughness_texture = ExtResource("7_luhoe")
-roughness_texture_channel = 4
-normal_enabled = true
-normal_texture = ExtResource("6_cdcv3")
-ao_enabled = true
-ao_light_affect = 0.25
-ao_texture = ExtResource("5_d6e7h")
-ao_texture_channel = 4
-uv1_scale = Vector3(32, 32, 32)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_n5ksf"]
 lightmap_size_hint = Vector2i(152, 152)
-material = SubResource("StandardMaterial3D_v8jos")
 size = Vector2(30, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fcumv"]
@@ -83,22 +66,16 @@ environment = SubResource("Environment_d5shx")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = ExtResource("5_bs0rd")
+[node name="Floor" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_n5ksf")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_bs0rd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_fcumv")
 
 [node name="ToiletInst" parent="." instance=ExtResource("6_bch07")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 10, 0)
-
-[node name="ToiletInst2" parent="." instance=ExtResource("6_bch07")]
-transform = Transform3D(-0.64145, 0, 0.767165, 0, 1, 0, -0.767165, 0, -0.64145, 3, 10, 0)
-
-[node name="ToiletInst3" parent="." instance=ExtResource("6_bch07")]
-transform = Transform3D(-0.91706, 0, -0.398749, 0, 1, 0, 0.398749, 0, -0.91706, -3, 10, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.838766, 0.544493, 0, -0.544493, 0.838766, 0, 1.28379, 0)

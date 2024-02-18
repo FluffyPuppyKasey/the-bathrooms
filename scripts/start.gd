@@ -10,6 +10,7 @@ func _ready():
 		config.set_value("options", "lookSensitivity", 10.0)
 		config.set_value("options", "fsr", false)
 		config.set_value("options", "vhs_filter", true)
+		config.set_value("options", "eyebleed", false)
 		config.save("user://options.cfg")
 	elif FileAccess.file_exists("user://options.cfg") == true:
 		if config.get_value("options", "fullscreenMode") == 0:

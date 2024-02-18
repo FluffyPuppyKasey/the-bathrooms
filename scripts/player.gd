@@ -73,5 +73,3 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta):
 	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"
-
-

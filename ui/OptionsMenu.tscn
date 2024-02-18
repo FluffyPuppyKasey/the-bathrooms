@@ -116,6 +116,18 @@ text = "VHS Filter:"
 [node name="VHSFilterCheckbox" type="CheckBox" parent="VBoxContainer/VHSFilter"]
 layout_mode = 2
 
+[node name="Eyebleed" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/Eyebleed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Let my eyes bleed: "
+
+[node name="EyebleedCheckbox" type="CheckBox" parent="VBoxContainer/Eyebleed"]
+layout_mode = 2
+
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
@@ -125,9 +137,21 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_32lav")
 layout_mode = 2
 text = "Back"
 
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+initial_position = 1
+size = Vector2i(300, 158)
+unresizable = true
+popup_window = true
+dialog_text = "To enable the let my eyes bleed setting, you must restart the game. Unfortunately there's no way around this"
+dialog_hide_on_ok = false
+dialog_close_on_escape = false
+dialog_autowrap = true
+
 [connection signal="value_changed" from="VBoxContainer/Resolution/ResSlider" to="." method="_on_res_slider_value_changed"]
 [connection signal="toggled" from="VBoxContainer/FSR/FSRCheckBox" to="." method="_on_fsr_check_box_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Fullscreen/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/MouseSensitivity/SensSlider" to="." method="_on_sens_slider_value_changed"]
 [connection signal="toggled" from="VBoxContainer/VHSFilter/VHSFilterCheckbox" to="." method="_on_vhs_filter_checkbox_toggled"]
+[connection signal="toggled" from="VBoxContainer/Eyebleed/EyebleedCheckbox" to="." method="_on_eyebleed_checkbox_toggled"]
 [connection signal="pressed" from="VBoxContainer/BackToMenuInGame" to="." method="_on_back_to_menu_pressed"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_accept_dialog_confirmed"]

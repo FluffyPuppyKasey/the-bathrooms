@@ -1,0 +1,1706 @@
+[gd_scene load_steps=42 format=3 uid="uid://d4gcvn7wsyqab"]
+
+[ext_resource type="PackedScene" uid="uid://cgxp5u4ff3rgi" path="res://scriptDependencies/Player.tscn" id="1_2n5o3"]
+[ext_resource type="Script" path="res://levels/mainLevel.gd" id="1_mskfk"]
+[ext_resource type="Material" uid="uid://ccn5cwdgi52t6" path="res://materials/floor.tres" id="2_8qe4c"]
+[ext_resource type="Material" uid="uid://cd2ah46q4dmqs" path="res://materials/ceiling.tres" id="2_lrmkk"]
+[ext_resource type="Material" uid="uid://bl7uq0lrpvg8m" path="res://materials/walls.tres" id="3_8da1b"]
+[ext_resource type="ArrayMesh" uid="uid://ciibv5kcwh4jp" path="res://models/toilet.obj" id="3_oumry"]
+[ext_resource type="Material" uid="uid://182jccm0ywgs" path="res://materials/mainToilet.tres" id="4_rhnqw"]
+[ext_resource type="Material" uid="uid://5ikba1kiigmo" path="res://materials/metal.tres" id="5_tq0e7"]
+[ext_resource type="ArrayMesh" uid="uid://duws65pecjq0e" path="res://models/monitor.obj" id="9_pwfx5"]
+[ext_resource type="Material" uid="uid://dh77rkfswlqxv" path="res://materials/monitorCasing.tres" id="10_y5cav"]
+[ext_resource type="Material" uid="uid://bxx0r82nnvbdj" path="res://materials/display.tres" id="11_evjnh"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="12_bp0rv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xilen"]
+sky_top_color = Color(0.52549, 0.435294, 0.258824, 1)
+sun_angle_max = 5.0
+
+[sub_resource type="Sky" id="Sky_not5p"]
+sky_material = SubResource("ProceduralSkyMaterial_xilen")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_fywur"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_not5p")
+ambient_light_source = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_normalized = true
+volumetric_fog_density = 0.125
+volumetric_fog_albedo = Color(0.682353, 0.596078, 0.447059, 1)
+volumetric_fog_length = 32.0
+volumetric_fog_ambient_inject = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wt2e"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_41e2y"]
+material = SubResource("StandardMaterial3D_7wt2e")
+size = Vector3(32, 0.125, 64.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hebuf"]
+data = PackedVector3Array(-16, 0.0625, 32.25, 16, 0.0625, 32.25, -16, -0.0625, 32.25, 16, 0.0625, 32.25, 16, -0.0625, 32.25, -16, -0.0625, 32.25, 16, 0.0625, -32.25, -16, 0.0625, -32.25, 16, -0.0625, -32.25, -16, 0.0625, -32.25, -16, -0.0625, -32.25, 16, -0.0625, -32.25, 16, 0.0625, 32.25, 16, 0.0625, -32.25, 16, -0.0625, 32.25, 16, 0.0625, -32.25, 16, -0.0625, -32.25, 16, -0.0625, 32.25, -16, 0.0625, -32.25, -16, 0.0625, 32.25, -16, -0.0625, -32.25, -16, 0.0625, 32.25, -16, -0.0625, 32.25, -16, -0.0625, -32.25, 16, 0.0625, 32.25, -16, 0.0625, 32.25, 16, 0.0625, -32.25, -16, 0.0625, 32.25, -16, 0.0625, -32.25, 16, 0.0625, -32.25, -16, -0.0625, 32.25, 16, -0.0625, 32.25, -16, -0.0625, -32.25, 16, -0.0625, 32.25, 16, -0.0625, -32.25, -16, -0.0625, -32.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lpeh"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0rbe"]
+material = SubResource("StandardMaterial3D_1lpeh")
+size = Vector3(32, 0.125, 5.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ewfou"]
+data = PackedVector3Array(-16, 0.0625, 2.625, 16, 0.0625, 2.625, -16, -0.0625, 2.625, 16, 0.0625, 2.625, 16, -0.0625, 2.625, -16, -0.0625, 2.625, 16, 0.0625, -2.625, -16, 0.0625, -2.625, 16, -0.0625, -2.625, -16, 0.0625, -2.625, -16, -0.0625, -2.625, 16, -0.0625, -2.625, 16, 0.0625, 2.625, 16, 0.0625, -2.625, 16, -0.0625, 2.625, 16, 0.0625, -2.625, 16, -0.0625, -2.625, 16, -0.0625, 2.625, -16, 0.0625, -2.625, -16, 0.0625, 2.625, -16, -0.0625, -2.625, -16, 0.0625, 2.625, -16, -0.0625, 2.625, -16, -0.0625, -2.625, 16, 0.0625, 2.625, -16, 0.0625, 2.625, 16, 0.0625, -2.625, -16, 0.0625, 2.625, -16, 0.0625, -2.625, 16, 0.0625, -2.625, -16, -0.0625, 2.625, 16, -0.0625, 2.625, -16, -0.0625, -2.625, 16, -0.0625, 2.625, 16, -0.0625, -2.625, -16, -0.0625, -2.625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1amo"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp3h7"]
+material = SubResource("StandardMaterial3D_t1amo")
+size = Vector3(64, 0.125, 5.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t0u5l"]
+data = PackedVector3Array(-32, 0.0625, 2.625, 32, 0.0625, 2.625, -32, -0.0625, 2.625, 32, 0.0625, 2.625, 32, -0.0625, 2.625, -32, -0.0625, 2.625, 32, 0.0625, -2.625, -32, 0.0625, -2.625, 32, -0.0625, -2.625, -32, 0.0625, -2.625, -32, -0.0625, -2.625, 32, -0.0625, -2.625, 32, 0.0625, 2.625, 32, 0.0625, -2.625, 32, -0.0625, 2.625, 32, 0.0625, -2.625, 32, -0.0625, -2.625, 32, -0.0625, 2.625, -32, 0.0625, -2.625, -32, 0.0625, 2.625, -32, -0.0625, -2.625, -32, 0.0625, 2.625, -32, -0.0625, 2.625, -32, -0.0625, -2.625, 32, 0.0625, 2.625, -32, 0.0625, 2.625, 32, 0.0625, -2.625, -32, 0.0625, 2.625, -32, 0.0625, -2.625, 32, 0.0625, -2.625, -32, -0.0625, 2.625, 32, -0.0625, 2.625, -32, -0.0625, -2.625, 32, -0.0625, 2.625, 32, -0.0625, -2.625, -32, -0.0625, -2.625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn3ft"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xuisy"]
+material = SubResource("StandardMaterial3D_dn3ft")
+size = Vector3(64, 0.125, 5.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xpcbe"]
+data = PackedVector3Array(-32, 0.0625, 2.625, 32, 0.0625, 2.625, -32, -0.0625, 2.625, 32, 0.0625, 2.625, 32, -0.0625, 2.625, -32, -0.0625, 2.625, 32, 0.0625, -2.625, -32, 0.0625, -2.625, 32, -0.0625, -2.625, -32, 0.0625, -2.625, -32, -0.0625, -2.625, 32, -0.0625, -2.625, 32, 0.0625, 2.625, 32, 0.0625, -2.625, 32, -0.0625, 2.625, 32, 0.0625, -2.625, 32, -0.0625, -2.625, 32, -0.0625, 2.625, -32, 0.0625, -2.625, -32, 0.0625, 2.625, -32, -0.0625, -2.625, -32, 0.0625, 2.625, -32, -0.0625, 2.625, -32, -0.0625, -2.625, 32, 0.0625, 2.625, -32, 0.0625, 2.625, 32, 0.0625, -2.625, -32, 0.0625, 2.625, -32, 0.0625, -2.625, 32, 0.0625, -2.625, -32, -0.0625, 2.625, 32, -0.0625, 2.625, -32, -0.0625, -2.625, 32, -0.0625, 2.625, 32, -0.0625, -2.625, -32, -0.0625, -2.625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgiqy"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_qjjon"]
+material = SubResource("StandardMaterial3D_kgiqy")
+size = Vector3(32, 0.125, 5.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2883p"]
+data = PackedVector3Array(-16, 0.0625, 2.625, 16, 0.0625, 2.625, -16, -0.0625, 2.625, 16, 0.0625, 2.625, 16, -0.0625, 2.625, -16, -0.0625, 2.625, 16, 0.0625, -2.625, -16, 0.0625, -2.625, 16, -0.0625, -2.625, -16, 0.0625, -2.625, -16, -0.0625, -2.625, 16, -0.0625, -2.625, 16, 0.0625, 2.625, 16, 0.0625, -2.625, 16, -0.0625, 2.625, 16, 0.0625, -2.625, 16, -0.0625, -2.625, 16, -0.0625, 2.625, -16, 0.0625, -2.625, -16, 0.0625, 2.625, -16, -0.0625, -2.625, -16, 0.0625, 2.625, -16, -0.0625, 2.625, -16, -0.0625, -2.625, 16, 0.0625, 2.625, -16, 0.0625, 2.625, 16, 0.0625, -2.625, -16, 0.0625, 2.625, -16, 0.0625, -2.625, 16, 0.0625, -2.625, -16, -0.0625, 2.625, 16, -0.0625, 2.625, -16, -0.0625, -2.625, 16, -0.0625, 2.625, 16, -0.0625, -2.625, -16, -0.0625, -2.625)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xhq08"]
+material = ExtResource("2_8qe4c")
+size = Vector3(32, 0.125, 64)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w3xi2"]
+data = PackedVector3Array(-16, 0.0625, 32, 16, 0.0625, 32, -16, -0.0625, 32, 16, 0.0625, 32, 16, -0.0625, 32, -16, -0.0625, 32, 16, 0.0625, -32, -16, 0.0625, -32, 16, -0.0625, -32, -16, 0.0625, -32, -16, -0.0625, -32, 16, -0.0625, -32, 16, 0.0625, 32, 16, 0.0625, -32, 16, -0.0625, 32, 16, 0.0625, -32, 16, -0.0625, -32, 16, -0.0625, 32, -16, 0.0625, -32, -16, 0.0625, 32, -16, -0.0625, -32, -16, 0.0625, 32, -16, -0.0625, 32, -16, -0.0625, -32, 16, 0.0625, 32, -16, 0.0625, 32, 16, 0.0625, -32, -16, 0.0625, 32, -16, 0.0625, -32, 16, 0.0625, -32, -16, -0.0625, 32, 16, -0.0625, 32, -16, -0.0625, -32, 16, -0.0625, 32, 16, -0.0625, -32, -16, -0.0625, -32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_47yl3"]
+size = Vector3(24, 5, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hk8qj"]
+data = PackedVector3Array(-12, 2.5, 0.5, 12, 2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, -0.5, 12, -2.5, -0.5, -12, 2.5, -0.5, -12, -2.5, -0.5, 12, -2.5, -0.5, 12, 2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, -0.5, 12, -2.5, 0.5, -12, 2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, 0.5, -12, -2.5, -0.5, 12, 2.5, 0.5, -12, 2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, 0.5, -12, 2.5, -0.5, 12, 2.5, -0.5, -12, -2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, -0.5, 12, -2.5, 0.5, 12, -2.5, -0.5, -12, -2.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ir4t5"]
+size = Vector3(0.5, 0.9, 0.8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h3tcd"]
+data = PackedVector3Array(-12, 2.5, 0.5, 12, 2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, -0.5, 12, -2.5, -0.5, -12, 2.5, -0.5, -12, -2.5, -0.5, 12, -2.5, -0.5, 12, 2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, -0.5, 12, -2.5, 0.5, -12, 2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, 0.5, -12, -2.5, -0.5, 12, 2.5, 0.5, -12, 2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, 0.5, -12, 2.5, -0.5, 12, 2.5, -0.5, -12, -2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, -0.5, 12, -2.5, 0.5, 12, -2.5, -0.5, -12, -2.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sx4s2"]
+data = PackedVector3Array(-12, 2.5, 0.5, 12, 2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, -0.5, 12, -2.5, -0.5, -12, 2.5, -0.5, -12, -2.5, -0.5, 12, -2.5, -0.5, 12, 2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, 0.5, 12, 2.5, -0.5, 12, -2.5, -0.5, 12, -2.5, 0.5, -12, 2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, -0.5, -12, 2.5, 0.5, -12, -2.5, 0.5, -12, -2.5, -0.5, 12, 2.5, 0.5, -12, 2.5, 0.5, 12, 2.5, -0.5, -12, 2.5, 0.5, -12, 2.5, -0.5, 12, 2.5, -0.5, -12, -2.5, 0.5, 12, -2.5, 0.5, -12, -2.5, -0.5, 12, -2.5, 0.5, 12, -2.5, -0.5, -12, -2.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16xqx"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5pa3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8ml0"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2048.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amlfw"]
+shader = ExtResource("12_bp0rv")
+shader_parameter/res = Vector2(512, 512)
+shader_parameter/mask_type = 2
+shader_parameter/bloom_type = 1
+shader_parameter/hardScan = -8.0
+shader_parameter/hardPix = -2.0
+shader_parameter/hardBloomScan = -2.0
+shader_parameter/hardBloomPix = -1.5
+shader_parameter/bloomAmount = 16.0
+shader_parameter/warp = Vector2(64, 24)
+shader_parameter/maskDark = 0.5
+shader_parameter/maskLight = 1.5
+
+[node name="mainLevel" type="Node3D"]
+script = ExtResource("1_mskfk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fywur")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.26986, -2.2982)
+light_color = Color(0.611765, 0.552941, 0.329412, 1)
+light_energy = 0.125
+light_volumetric_fog_energy = 16.0
+light_angular_distance = 4.72
+
+[node name="Player" parent="." instance=ExtResource("1_2n5o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.68118)
+
+[node name="MainRoomGeometry" type="Node" parent="."]
+
+[node name="Roof" type="MeshInstance3D" parent="MainRoomGeometry"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.0286322, 4.88309, 0.00207806)
+material_override = ExtResource("2_lrmkk")
+gi_mode = 2
+gi_lightmap_scale = 3
+mesh = SubResource("BoxMesh_41e2y")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Roof"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Roof/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hebuf")
+
+[node name="Wall1" type="MeshInstance3D" parent="MainRoomGeometry"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, 2.5, 32)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_n0rbe")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Wall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Wall1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ewfou")
+
+[node name="Wall2" type="MeshInstance3D" parent="MainRoomGeometry"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -16, 2.5, 0)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_gp3h7")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Wall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t0u5l")
+
+[node name="Wall3" type="MeshInstance3D" parent="MainRoomGeometry"]
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, 16, 2.5, 0)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_xuisy")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Wall3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xpcbe")
+
+[node name="Wall4" type="MeshInstance3D" parent="MainRoomGeometry"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.5, -32)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_qjjon")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Wall4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2883p")
+
+[node name="Floor" type="MeshInstance3D" parent="MainRoomGeometry"]
+mesh = SubResource("BoxMesh_xhq08")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRoomGeometry/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRoomGeometry/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w3xi2")
+
+[node name="Wall" type="Node" parent="."]
+
+[node name="StallWall" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0.1572)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_47yl3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/StallWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StallWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hk8qj")
+
+[node name="Toilet" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet8" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet8"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet9" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet9"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall/Toilet9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet7" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet7"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet10" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet10"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet11" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet11"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall/Toilet11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet2" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet2"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Wall/Toilet2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet3" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet3"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall/Toilet3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet4" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0840573, 1.25259)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet4"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall/Toilet4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet5" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet5"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Wall/Toilet5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet6" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2, 0.084, 1.253)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall/Toilet6"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall/Toilet6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Wall/Toilet6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Wall3" type="Node" parent="."]
+
+[node name="StallWall" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_47yl3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/StallWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StallWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h3tcd")
+
+[node name="Toilet" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet8" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet8"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet9" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet9"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall3/Toilet9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet7" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet7"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet10" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet10"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet11" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet11"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall3/Toilet11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet2" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet2"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Wall3/Toilet2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet3" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet3"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall3/Toilet3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet4" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0840573, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet4"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall3/Toilet4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet5" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet5"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Wall3/Toilet5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet6" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2, 0.084, 11.2)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall3/Toilet6"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall3/Toilet6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Wall3/Toilet6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Wall2" type="Node" parent="."]
+
+[node name="StallWall" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -10)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_47yl3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/StallWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StallWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sx4s2")
+
+[node name="Toilet" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet8" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet8"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet9" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet9"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall2/Toilet9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet7" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet7"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet10" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet10"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet11" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet11"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall2/Toilet11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet2" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet2"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Wall2/Toilet2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet3" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet3"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall2/Toilet3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet4" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0840573, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet4"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall2/Toilet4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet5" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet5"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Wall2/Toilet5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet6" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2, 0.084, -8.9)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2/Toilet6"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall2/Toilet6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Wall2/Toilet6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Wall4" type="Node" parent="."]
+
+[node name="StallWall" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 20.0002)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_47yl3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/StallWall"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/StallWall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="Toilet" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet8" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet8"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet9" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet9"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall4/Toilet9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet7" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet7"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet10" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet10"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet11" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet11"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall4/Toilet11"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet2" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet2"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Wall4/Toilet2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet3" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet3"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall4/Toilet3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet4" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0840573, 21.0956)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet4"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall4/Toilet4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet5" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet5"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Wall4/Toilet5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet6" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2, 0.084, 21.096)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall4/Toilet6"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall4/Toilet6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Wall4/Toilet6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Wall5" type="Node" parent="."]
+
+[node name="StallWall" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -20.0001)
+material_override = ExtResource("3_8da1b")
+mesh = SubResource("BoxMesh_47yl3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/StallWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall5/StallWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h3tcd")
+
+[node name="Toilet" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall5/Toilet"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet8" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet8"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall5/Toilet8"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet9" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet9"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Wall5/Toilet9"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet7" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet7"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall5/Toilet7"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet10" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet10"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall5/Toilet10"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet11" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet11"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Wall5/Toilet11"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet2" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet2"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Wall5/Toilet2"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet3" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet3"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall5/Toilet3"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet4" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0840573, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet4"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Wall5/Toilet4"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet5" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet5"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Wall5/Toilet5"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Toilet6" type="MeshInstance3D" parent="Wall5"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2, 0.084, -18.8001)
+mesh = ExtResource("3_oumry")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_rhnqw")
+surface_material_override/1 = ExtResource("4_rhnqw")
+surface_material_override/2 = ExtResource("5_tq0e7")
+surface_material_override/3 = ExtResource("4_rhnqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall5/Toilet6"]
+
+[node name="BoxCollision" type="CollisionShape3D" parent="Wall5/Toilet6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.0213265)
+shape = SubResource("BoxShape3D_ir4t5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Wall5/Toilet6"]
+transform = Transform3D(0.666667, 0, 0, 0, -2.91409e-08, 0.666667, 0, -0.666667, -2.91409e-08, 0, 3.19183, -0.168667)
+light_color = Color(0.658824, 0.560784, 0.368627, 1)
+light_energy = 12.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 20.0
+light_specular = 1.0
+shadow_enabled = true
+spot_angle = 15.0
+
+[node name="Monitor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.840633, 0, -0.541605, 0, 1, 0, 0.541605, 0, -0.840633, 11.8619, 0.0625, 4.74727)
+mesh = ExtResource("9_pwfx5")
+surface_material_override/0 = ExtResource("10_y5cav")
+surface_material_override/1 = ExtResource("11_evjnh")
+surface_material_override/2 = SubResource("StandardMaterial3D_16xqx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monitor"]
+transform = Transform3D(0.05, 0, -9.31323e-09, 0, 0.05, 0, 9.31323e-09, 0, 0.05, 0.279634, 0.400351, 0.592834)
+mesh = SubResource("SphereMesh_5pa3s")
+surface_material_override/0 = SubResource("StandardMaterial3D_o8ml0")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+handle_input_locally = false
+vrs_mode = 2
+render_target_update_mode = 4
+
+[node name="CRT" type="CanvasLayer" parent="SubViewport"]
+layer = 2
+
+[node name="Shader" type="ColorRect" parent="SubViewport/CRT"]
+material = SubResource("ShaderMaterial_amlfw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_right = -560.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.501961)
+metadata/_edit_use_anchors_ = true
+
+[node name="Display" type="CanvasLayer" parent="SubViewport"]
+
+[node name="DisplayColorRect" type="ColorRect" parent="SubViewport/Display"]

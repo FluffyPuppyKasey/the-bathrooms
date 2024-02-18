@@ -15,6 +15,7 @@ func _ready():
 		$VBoxContainer/MouseSensitivity/SensSlider.value = config.get_value("options", "lookSensitivity")
 		$VBoxContainer/MouseSensitivity/Label2.text = str(config.get_value("options", "lookSensitivity"))
 		$VBoxContainer/VHSFilter/VHSFilterCheckbox.button_pressed = config.get_value("options", "vhs_filter")
+		$VBoxContainer/Eyebleed/EyebleedCheckbox.button_pressed = config.get_value("options", "eyebleed")
 		if config.get_value("options", "fullscreenMode") == 0:
 			$VBoxContainer/Fullscreen/OptionButton.select(0)
 		elif config.get_value("options", "fullscreenMode") == 1:
@@ -82,3 +83,16 @@ func _on_backToMenu_pressed():
 func _on_vhs_filter_checkbox_toggled(button_pressed):
 	config.set_value("options", "vhs_filter", button_pressed)
 	config.save("user://options.cfg")
+
+func _on_eyebleed_checkbox_toggled(button_pressed):
+	config.set_value("options", "eyebleed", button_pressed)
+	config.save("user://options.cfg")
+	print(get_parent().get_parent())
+	if button_pressed == true && $"..".visible == true:
+		$AcceptDialog.visible = !$AcceptDialog.visible
+	elif button_pressed == false && $"..".visible == true:
+		$AcceptDialog.visible = !$AcceptDialog.visible
+
+func _on_accept_dialog_confirmed():
+	config.save("user://options.cfg")
+	get_tree().quit()

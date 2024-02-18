@@ -15,3 +15,4 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_operator = 1
 emission_texture = SubResource("CanvasTexture_6pwvp")
+uv1_scale = Vector3(1, 1.125, 1)

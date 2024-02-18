@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dfckh3rguevq8"]
+
+[ext_resource type="Shader" path="res://shaders/eyebleed.gdshader" id="1_dwqse"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dwqse")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = null
+shader_parameter/metallic = 0.0
+shader_parameter/alpha_scissor_threshold = null
+shader_parameter/roughness = 0.0
+shader_parameter/point_size = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/speed = 5.0
+shader_parameter/frequency_uniform = 30.0
+shader_parameter/is_breath = false
+shader_parameter/breath_speed = 0.368
+shader_parameter/breath_freq = 0.021

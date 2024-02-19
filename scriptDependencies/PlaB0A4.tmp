@@ -29,10 +29,7 @@ shader_parameter/horzFuzzOpt = 0.15
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rhfcw"]
 shader = ExtResource("2_ssish")
-shader_parameter/blur_type = 0
-shader_parameter/blur_amount = 32
-shader_parameter/blur_radius = 1.0
-shader_parameter/blur_direction = Vector2(1, 1)
+shader_parameter/amount = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrlfq"]
 
@@ -112,20 +109,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Pivot/Camera/CanvasLayer5"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-color = Color(0, 0, 0, 0.235294)
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="Pivot/Camera"]
-process_mode = 3
 layer = 10
 follow_viewport_enabled = true
 

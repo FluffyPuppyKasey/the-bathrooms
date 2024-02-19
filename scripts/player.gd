@@ -1,14 +1,16 @@
 extends CharacterBody3D
 
 var config = ConfigFile.new()
-var err = config.load("user://options.cfg")
-
-var mouseSens = config.get_value("options", "lookSensitivity") / 2000
-
+var mouseSens
+var err
 var SPEED = 5
 var SPRINTSPEED = SPEED * 2
 const JUMP_VELOCITY = 2.5
-const SLIDE_VELOCITY = 5
+
+func _process(_delta):
+	err = config.load("user://options.cfg")
+	mouseSens = config.get_value("options", "lookSensitivity") / 2000
+	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"
 
 func _ready():
 	$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
@@ -22,14 +24,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$Pivot/Camera/CanvasLayer2.visible = !$Pivot/Camera/CanvasLayer2.visible
 		$Pivot/Camera/CanvasLayer5.visible = !$Pivot/Camera/CanvasLayer5.visible
+		get_tree().paused = true
 	if $Pivot/Camera/CanvasLayer2.visible == false and event.is_action_pressed("ui_cancel"):
+		get_tree().paused = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and !event.is_action_pressed("ui_cancel"):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouseSens)
 			camera.rotate_x(-event.relative.y * mouseSens)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -70,6 +73,3 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("flashlight"):
 		$SpotLight3D.visible = !$SpotLight3D.visible
 	$SpotLight3D.rotation = Vector3(camera.rotation.x, neck.rotation.y, camera.rotation.z)
-
-func _process(_delta):
-	$Pivot/Camera/CanvasLayer6/FPSCounter.text = str(Engine.get_frames_per_second()) + " FPS"

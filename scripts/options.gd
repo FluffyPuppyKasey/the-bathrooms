@@ -2,29 +2,28 @@ extends Node
 
 var config = ConfigFile.new()
 var err = config.load("user://options.cfg")
-
 var mouseSens = config.get_value("options", "lookSensitivity")
 
 func _ready():
-	if err != OK:
-		return
-	elif err == OK:
-		$VBoxContainer/Resolution/ResScaleLabel.text = str(config.get_value("options", "resolutionScale")*100) + "%"
-		$VBoxContainer/Resolution/ResSlider.value = config.get_value("options", "resolutionScale")
-		$VBoxContainer/FSR/FSRCheckBox.button_pressed = config.get_value("options", "fsr")
-		$VBoxContainer/MouseSensitivity/SensSlider.value = config.get_value("options", "lookSensitivity")
-		$VBoxContainer/MouseSensitivity/Label2.text = str(config.get_value("options", "lookSensitivity"))
-		$VBoxContainer/VHSFilter/VHSFilterCheckbox.button_pressed = config.get_value("options", "vhs_filter")
-		$VBoxContainer/Eyebleed/EyebleedCheckbox.button_pressed = config.get_value("options", "eyebleed")
-		if config.get_value("options", "fullscreenMode") == 0:
-			$VBoxContainer/Fullscreen/OptionButton.select(0)
-		elif config.get_value("options", "fullscreenMode") == 1:
-			$VBoxContainer/Fullscreen/OptionButton.select(1)
-		elif config.get_value("options", "fullscreenMode") == 2:
-			$VBoxContainer/Fullscreen/OptionButton.select(2)
+		if err != OK:
+			return
+		elif err == OK:
+			$VBoxContainer/Resolution/ResScaleLabel.text = str(config.get_value("options", "resolutionScale")*100) + "%"
+			$VBoxContainer/Resolution/ResSlider.value = config.get_value("options", "resolutionScale")
+			$VBoxContainer/FSR/FSRCheckBox.button_pressed = config.get_value("options", "fsr")
+			$VBoxContainer/MouseSensitivity/SensSlider.value = config.get_value("options", "lookSensitivity")
+			$VBoxContainer/MouseSensitivity/Label2.text = str(config.get_value("options", "lookSensitivity"))
+			$VBoxContainer/VHSFilter/VHSFilterCheckbox.button_pressed = config.get_value("options", "vhs_filter")
+			$VBoxContainer/Eyebleed/EyebleedCheckbox.button_pressed = config.get_value("options", "eyebleed")
+			if config.get_value("options", "fullscreenMode") == 0:
+				$VBoxContainer/Fullscreen/OptionButton.select(0)
+			elif config.get_value("options", "fullscreenMode") == 1:
+				$VBoxContainer/Fullscreen/OptionButton.select(1)
+			elif config.get_value("options", "fullscreenMode") == 2:
+				$VBoxContainer/Fullscreen/OptionButton.select(2)
 
 func _process(_delta):
-	pass
+	mouseSens = config.get_value("options", "lookSensitivity") / 2000
 
 func _on_option_button_item_selected(index):
 	if index == 0:
@@ -67,7 +66,7 @@ func _on_back_to_menu_pressed():
 		get_parent().visible = !get_parent().visible
 		get_parent().get_parent().get_child(1).visible = !get_parent().get_parent().get_child(1).visible
 		get_parent().get_parent().get_child(2).visible = !get_parent().get_parent().get_child(2).visible
-# nice.
+
 func _on_sens_slider_value_changed(value):
 	config.set_value("options", "lookSensitivity", value)
 	$VBoxContainer/MouseSensitivity/Label2.text = str(value)

@@ -103,7 +103,7 @@ shader_parameter/edge_color = Color(0, 0, 0, 1)
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 16384.0
+emission_energy_multiplier = 2048.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ffyld"]
 shader = ExtResource("12_bp0rv")
@@ -131,6 +131,9 @@ light_color = Color(0.611765, 0.552941, 0.329412, 1)
 light_energy = 0.125
 light_volumetric_fog_energy = 16.0
 light_angular_distance = 4.72
+
+[node name="Player" parent="." instance=ExtResource("1_2n5o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.68118)
 
 [node name="MainRoomGeometry" type="Node" parent="."]
 
@@ -1658,28 +1661,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o8ml0")
 disable_3d = true
 handle_input_locally = false
 
-[node name="Display" type="CanvasLayer" parent="SubViewport"]
-
-[node name="DisplayTexture" type="TextureRect" parent="SubViewport/Display"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-expand_mode = 1
-
 [node name="CRTEffect" type="CanvasLayer" parent="SubViewport"]
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="SubViewport/CRTEffect"]
 material = SubResource("ShaderMaterial_ffyld")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Player" parent="." instance=ExtResource("1_2n5o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.68118)
+[node name="Display" type="CanvasLayer" parent="SubViewport"]
+
+[node name="DisplayTexture" type="TextureRect" parent="SubViewport/Display"]
+offset_right = 40.0
+offset_bottom = 40.0
